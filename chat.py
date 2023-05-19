@@ -1,14 +1,17 @@
-import openai
+import openai # importamos nuestra openai
 import time
 
-openai.api_key = "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"
-contexto_conversacion = " "
+openai.api_key = "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" # api de chatgpt
+
+
+
+
 
 def chatbot_response(prompt):
     completions = openai.Completion.create(
         engine='text-davinci-002',
         prompt=prompt,
-        max_tokens=2048,
+        max_tokens=1024,
         n=1,
         stop=None,
         temperature=0.5,
@@ -25,33 +28,7 @@ def tipografia_escritura(texto, retraso=0.05):
 
 tipografia_escritura('Hola. Soy una Inteligencia Artificial.')
 tipografia_escritura('¿De qué te gustaría hablar conmigo?')
-
-
-def user_response():
-    global contexto_conversacion
-    pregunta = "Finge ser un empleado de un cine llamado cinepolis recibiendo preguntas de los clientes, si entiendes la orden escribe OK"
-    respuesta = chatbot_response(contexto_conversacion + pregunta)
-    contexto_conversacion += respuesta
-    tipografia_escritura(respuesta)
-
-
-user_response()
-
-while True:
-    pregunta = input("Tu: ")
-    if pregunta.lower() in ['salir', 'terminar', 'exit']:
-        break
-    respuesta = chatbot_response(contexto_conversacion + pregunta)
-    contexto_conversacion += respuesta
-    tipografia_escritura(respuesta)
-
-exit()
-"""
-def user_response():
-    pregunta = "Finge ser dependiente de un cine"
-    respuesta = chatbot_response(contexto_conversacion + pregunta)
-    contexto_conversacion += respuesta
-    tipografia_escritura(respuesta)
+contexto = ""
 
 while True:
     pregunta = input("Tu: ")
@@ -60,23 +37,5 @@ while True:
     respuesta = chatbot_response(contexto + pregunta)
     contexto += respuesta
     tipografia_escritura(respuesta)
-
-
-def tipografia_escritura()
-
-context = ""
-
-while True:
-    prompt = input("\nIntroduce una pregunta: ")
-
-    if prompt == "exit":
-        break
-
-    completion = openai.Completion.create(engine="text-davinci-003",
-                            prompt=prompt,
-                            max_tokens=2048)
-    respuesta = context + completion.choices[0].text
-    context += respuesta
-    print(respuesta)
-"""
-
+    
+        

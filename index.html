@@ -1,150 +1,227 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Mi chat</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		.chat-container {
-			display: flex;
-			flex-direction: column;
-			height: 100vh;
-			background-color: #f2f2f2;
-			padding: 20px;
-			box-sizing: border-box;
-		}
-
-		.message-container {
-			display: flex;
-			flex-direction: column;
-			flex-grow: 1;
-			overflow-y: scroll;
-			margin-bottom: 20px;
-		}
-
-		.message {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			max-width: 60%;
-			margin-bottom: 10px;
-			padding: 10px;
-			background-color: #fff;
-			border-radius: 10px;
-		}
-
-		.message.sent {
-			align-items: flex-end;
-			background-color: #dcf8c6;
-		}
-
-		.message.sent p {
-			margin: 0;
-			text-align: right;
-		}
-
-		.message.received p {
-			margin: 0;
-			text-align: left;
-		}
-
-		.message input {
-			width: 100%;
-			padding: 10px;
-			border: none;
-			border-top: 1px solid #ccc;
-			box-sizing: border-box;
-		}
-
-		.message input:focus {
-			outline: none;
-		}
-
-		.send-button {
-			background-color: #4CAF50;
-			color: #fff;
-			padding: 10px;
-			border: none;
-			border-radius: 10px;
-			cursor: pointer;
-		}
-
-		.send-button:hover {
-			background-color: #3e8e41;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolito</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
+
+
+
 <body>
-	<div class="chat-container">
-		<div class="message-container">
-			<!--
-			<div class="message sent">
-				<p>Hola, ¿cómo estás?</p>
-			</div>
-			<div class="message received">
-				<p>Bien, gracias por preguntar. ¿Y tú?</p>
-			</div>
-			<div class="message sent">
-				<p>También estoy bien, gracias. ¿Qué planes tienes para hoy?</p>
-			</div>
-			<div class="message received">
-				<p>Nada en particular, solo pasar el tiempo en casa. ¿Y tú?</p>
-			</div>
-			-->
-		</div>
-		<div class="message">
-			<input id="message-input" type="text" placeholder="Escribe un mensaje...">
-			<button id="send-button" class="send-button">Enviar</button>
-		</div>
-	</div>
-	<script>
-		const messageInput = document.getElementById("message-input");
-		const sendButton = document.getElementById("send-button");
-		const messageContainer = document.querySelector(".message-container");
 
-		function addSentMessage(message) {
-			const sentMessage = document.createElement("div");
-			sentMessage.classList.add("message", "sent");
-			sentMessage.innerHTML = `<p>${message}</p>`;
-			messageContainer.appendChild(sentMessage);
-		}
+    <div class="portada_fondo">
+    </div>
 
-		function addReceivedMessage(message) {
-			const receivedMessage = document.createElement("div");
-			receivedMessage.classList.add("message", "received");
-			receivedMessage.innerHTML = `<p>${message}</p>`;
-			messageContainer.appendChild(receivedMessage);
-		}
+    <div class="portada_delante">
+    </div>
 
-		function sendMessage() {
-			const message = messageInput.value.trim();
-			if (message !== "") {
-				addSentMessage(message);
-				messageInput.value = "";
-				messageContainer.scrollTop = messageContainer.scrollHeight;
-				// Aquí podrías agregar código para enviar el mensaje al servidor
-				// y recibir la respuesta correspondiente para agregarla como mensaje recibido.
-			}
-		}
+    <div class="cine">
+        CINEPOLITO
+    </div>
 
-		function ReceivedMessage() {
-			const message = "Mensaje CHatGPT"
-			if (message !== "") {
-				addReceivedMessage(message);
-				messageContainer.scrollTop = messageContainer.scrollHeight;
-				// Aquí podrías agregar código para enviar el mensaje al servidor
-				// y recibir la respuesta correspondiente para agregarla como mensaje recibido.
-			}
-		}
+    <div class="sesion">
+        <a>Sesion</a>
+    </div>
 
-		sendButton.addEventListener("click", sendMessage);
+    <div class="registrate">
+        <a  >Registrate</a>
+    </div>
 
-		messageInput.addEventListener("keydown", (event) => {
-			if (event.key === "Enter") {
-				sendMessage();
-				ReceivedMessage()
-			}
-		});
-	</script>
+    <div class="cartelera">Cartelera</div>
+
+    <div class="peli1">
+        <a href="https://w4.cuevana3.ai/65555/avatar-the-way-of-water">
+            <img src="img/avatar.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="avatar">
+
+        </a>
+
+    </div>
+    
+    <div class="peli2">
+        <a href="https://w4.cuevana3.ai/65531/puss-in-boots-the-last-wish-mp4">
+            <img src="img/el gato con botas.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="el gato con botas">
+
+        </a>
+
+    </div>
+
+
+    <div class="peli3">
+        <a href="https://w4.cuevana3.ai/66357/house-party">
+            <img src="img/fiesta en casa.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="fiesta en casa">
+
+        </a>
+
+    </div>
+
+
+    <div class="peli4">
+        <a href="https://w4.cuevana3.ai/65504/huevitos-congelados">
+            <img src="img/huevitos congelados.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="huevitos congelados">
+
+        </a>
+
+    </div>
+
+    <div class="peli5">
+        <a href="https://w4.cuevana3.ai/66404/jung_e">
+            <img src="img/junge.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="junge">
+
+        </a>
+
+    </div>
+
+
+    <div class="peli6">
+        <a href="https://w4.cuevana3.ai/66839/the-whale">
+            <img src="img/la ballena.jpg" 
+                 width="210px"
+                 height="290px"
+                 title="la ballena">
+
+        </a>
+
+    </div>
+
+    <div class="peli7">
+        <a href="https://w4.cuevana3.ai/65750/the-seven-deadly-sins-grudge-of-edinburgh-part-1">
+            <img src="img/los 7 pecados capitales.jpg"
+                 width="210px"
+                 height="290px"
+                 title="los 7 pecados capitales">
+
+        </a>
+
+    </div>
+
+
+    
+    <div class="peli8">
+        <a href="https://w4.cuevana3.ai/65491/night-at-the-museum-kahmunrah-rises-again">
+            <img src="img/noche en el museo.jpg"
+                 width="210px"
+                 height="290px"
+                 title="noche en el museo">
+
+        </a>
+
+    </div>
+
+     
+    <div class="peli9">
+        <a href="https://w4.cuevana3.ai/66596/the-elephant-whisperers">
+            <img src="img/nuestro bebe elefante.jpg"
+                 width="210px"
+                 height="290px"
+                 title="nuestro bebe elefante">
+
+        </a>
+
+    </div>
+
+
+     
+    <div class="peli10">
+        <a href="https://w4.cuevana3.ai/65495/guillermo-del-toros-pinocchio">
+            <img src="img/pinocho.jpg"
+                 width="210px"
+                 height="290px"
+                 title="pinocho">
+
+        </a>
+
+    </div>
+
+    <div class="peli11">
+        <a href="https://w4.cuevana3.ai/66879/ant-man-y-la-avispa-quantumania">
+            <img src="img/quantumania.jpg"
+                 width="210px"
+                 height="290px"
+                 title="quantumania">
+
+        </a>
+
+    </div>
+
+    <div class="peli12">
+        <a href="https://w4.cuevana3.ai/67054/faraway">
+            <img src="img/muy lejos.jpg"
+                 width="210px"
+                 height="290px"
+                 title="muy lejos">
+
+        </a>
+
+    </div>
+
+    <div class="peli13">
+        <a href="https://w4.cuevana3.ai/66436/the-offering-2">
+            <img src="img/the offering.jpg"
+                 width="210px"
+                 height="290px"
+                 title="la oferta">
+
+        </a>
+
+    </div>
+
+
+    <div class="peli14">
+        <a href="https://w4.cuevana3.ai/65647/todavia-creo-en-santa">
+            <img src="img/todabia creo en santajpg.jpg"
+                 width="210px"
+                 height="290px"
+                 title="todabia creo en santa">
+
+        </a>
+
+    </div>
+
+
+    <div class="peli15">
+        <a href="https://w4.cuevana3.ai/66639/venus">
+            <img src="img/venus.jpg"
+                 width="210px"
+                 height="290px"
+                 title="venus">
+
+        </a>
+
+    </div>
+
+    <div class="promociones">
+            <img src="img/promo.png"
+                 width="1130px"
+                 height="260px">
+                 
+
+        
+
+    </div>
+
+    <div class="chat">
+        <a href="#"target="_blank">Chat</a>
+    </div>
 </body>
+
+
+
 </html>
