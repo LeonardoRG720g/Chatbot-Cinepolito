@@ -2,7 +2,7 @@ import openai
 import time
 
 openai.api_key = "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"
-
+contexto_conversacion = " "
 
 def chatbot_response(prompt):
     completions = openai.Completion.create(
@@ -25,7 +25,33 @@ def tipografia_escritura(texto, retraso=0.05):
 
 tipografia_escritura('Hola. Soy una Inteligencia Artificial.')
 tipografia_escritura('¿De qué te gustaría hablar conmigo?')
-contexto = ""
+
+
+def user_response():
+    global contexto_conversacion
+    pregunta = "Finge ser un empleado de un cine llamado cinepolis recibiendo preguntas de los clientes, si entiendes la orden escribe OK"
+    respuesta = chatbot_response(contexto_conversacion + pregunta)
+    contexto_conversacion += respuesta
+    tipografia_escritura(respuesta)
+
+
+user_response()
+
+while True:
+    pregunta = input("Tu: ")
+    if pregunta.lower() in ['salir', 'terminar', 'exit']:
+        break
+    respuesta = chatbot_response(contexto_conversacion + pregunta)
+    contexto_conversacion += respuesta
+    tipografia_escritura(respuesta)
+
+exit()
+"""
+def user_response():
+    pregunta = "Finge ser dependiente de un cine"
+    respuesta = chatbot_response(contexto_conversacion + pregunta)
+    contexto_conversacion += respuesta
+    tipografia_escritura(respuesta)
 
 while True:
     pregunta = input("Tu: ")
@@ -35,7 +61,7 @@ while True:
     contexto += respuesta
     tipografia_escritura(respuesta)
 
-"""
+
 def tipografia_escritura()
 
 context = ""
